@@ -1,2 +1,2 @@
 # Loops
-Practicing loop structures.
+Programs practicing loop structures.
