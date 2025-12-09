@@ -1,0 +1,39 @@
+/*
+ * 	Author:	 Robert Alvarez
+ * 	Date:	 12-9-25
+ * 	Summary: the app asks the user for two decimal numbers,
+ * 			 divides them, and displays both input and the result.	 
+ */
+
+import java.util.Scanner;			// import a Scanner to read keyboard input
+import java.text.DecimalFormat;		// import tool to format output as decimal
+
+public class Division 
+{
+
+	public static void main(String[] args) 
+	{
+			// variables
+					double numerator   = 0.0;							// also called dividend (top number)
+					double denominator = 0.0;							// also called divisor (bottom number)
+					double quotient    = 0.0;							// also called remainder (result)
+					Scanner get 		   = new Scanner(System.in);			// set up Scanner
+					DecimalFormat DF	   = new DecimalFormat("##.##");		// force two decimal output format 
+					
+			// input
+					System.out.println("Enter numerator to divide: ");
+					numerator = get.nextDouble();
+					//-----------------------------------------------
+					System.out.println("Enter denominator to divide: ");
+					denominator = get.nextDouble();
+					
+			// process: 
+					quotient = numerator / denominator;
+					
+			// output
+					System.out.println("The total of " + DF.format(numerator) + " divided by " + DF.format(denominator) 
+									   + " is equals to " + DF.format(quotient));
+			
+					get.close(); 	// closing Scanner
+	}// end main method
+}// end class Division
