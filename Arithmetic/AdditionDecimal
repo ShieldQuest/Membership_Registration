@@ -1,0 +1,37 @@
+/*
+ * 	Author:	 Robert Alvarez
+ * 	Date:	 12-9-25
+ * 	Summary: the app asks the user for two decimal numbers,
+ * 			 adds them, and displays both input and the result.	 
+ */
+
+import java.util.Scanner;		// importing a scanner to read keyboard input
+
+public class AdditionDecimal 
+{
+
+	public static void main(String[] args) 
+	{
+			// variable 
+					double num1  = 0.0;
+					double num2  = 0.0;
+					double total = 0.0;
+					Scanner get  = new Scanner(System.in);		// set up Scanner
+					
+			// input
+					System.out.println("Enter first decimal number: ");
+					num1 = get.nextDouble();
+					//-------------------------------------------------
+					System.out.println("Enter second decimal number: ");
+					num2 = get.nextDouble();
+			
+			// process: total = num1 + num2
+					total = num1 + num2;
+			
+			// output
+					System.out.println("The total of " + num1 + " plus " + num2 + " is equals to " + total);
+			
+					get.close();		// close the Scanner
+				
+	}// end main method
+}// end class AdditionDecimal
