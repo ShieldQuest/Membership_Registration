@@ -1,0 +1,36 @@
+/*
+ * 	Author:  Robert Alvarez
+ *  Date:	 9-2-25
+ * 	Summary: the app asks the user for two whole numbers,
+ * 			 adds them, and displays both input and the result.   
+ */
+
+import java.util.Scanner;		// importing a scanner to read keyboard input
+
+public class Addition 
+{
+		public static void main(String[] args) 
+		{
+				// variables
+						int a = 0;
+						int b = 0;
+						int c = 0; 
+						Scanner get = new Scanner(System.in);	  // set up Scanner
+				
+				// input
+						System.out.println("Enter a value for the first number: ");
+						a = get.nextInt();
+						//---------------------------------------------------------
+						System.out.println("Enter a value for the second number: ");
+						b = get.nextInt();
+				
+				// process: a + b = c
+						c = a + b;
+				
+				// output
+						System.out.println("Adding " + a + " and " + b + " you get " + c);
+				
+				get.close();		// close the Scanner
+						
+		}// end main
+}// end class Addition
