@@ -1,0 +1,38 @@
+/*
+ * 	Author:    Robert Alvarez
+ * 	Date:      12-9-25
+ * 	Summary:	 this app asks the user to enter an hourly wage, 
+ * 			 and total hours worked to determine the gross pay. 
+ */
+
+import java.util.Scanner; 	// import Scanner to read input keyboard
+
+public class Payroll_V1 
+{
+
+	public static void main(String[] args) 
+	{
+			// variables 
+				  double wagePerHour = 0.0;
+					double hoursWorked = 0.0;
+					double totalPay	   = 0.0;
+					Scanner sc = new Scanner(System.in);		// set up Scanner
+					
+			// input
+					System.out.println("What is the hourly rate? $");
+					wagePerHour = sc.nextDouble();
+					//----------------------------------------------
+					System.out.println("How many hours worked? ");
+					hoursWorked = sc.nextDouble();
+			
+			// process: totalPay = wagePerHour * hoursWorked
+					totalPay = wagePerHour * hoursWorked;
+					
+			// output
+					System.out.println("Hourly rate: $"	+ wagePerHour + "\n" +
+									   "Hours worked: " 	+ hoursWorked + "\n" +
+									   "Gross pay: $"   	+ totalPay);
+					
+					sc.close();		// closing Scanner
+	}// end main method
+}// end class Payroll_V1
