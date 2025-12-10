@@ -1,0 +1,50 @@
+/*
+ * 	Author:  Robert Alvarez
+ * 	Date:	 12-10-25
+ * 	Summary:	 this app asks the user to enter an hourly wage, 
+ * 			 and total hours worked to determine the gross pay.  
+ * 			 It also asks for first & last name before it 
+ * 			 displays the data.
+ */
+
+import java.util.Scanner;		// import Scanner to read 
+
+public class Payroll_V2 
+{
+	public static void main(String[] args) 
+	{
+			// variables
+					String empFirst 		= " ";
+					String empLast  	   	= " ";
+					double wagePerHour 	= 0.0;
+					double hoursWorked 	= 0.0;
+					double totalPay	   	= 0.0;
+					Scanner sc 		   	= new Scanner(System.in);
+					
+			// input
+					System.out.println("Employee first name: ");
+					empFirst 	= sc.nextLine();
+					//------------------------------------------
+					System.out.println("Employee Last name: ");
+					empLast  	= sc.nextLine();
+					//------------------------------------------
+					System.out.println("Employee hourly rate: $");
+					wagePerHour = sc.nextDouble();
+					//------------------------------------------
+					System.out.println("Employee total hours worked: ");
+					hoursWorked = sc.nextDouble();
+					
+			// process: totalPay = wagePerHour * hoursWorked
+					totalPay = wagePerHour * hoursWorked;
+					 
+			// output
+					System.out.println("Employee Information" 	     		  + "\n" +
+									   "------------------------"     		  + "\n" +
+									   "Name: " + empFirst + " " + empLast 	  + "\n" +
+									   "Hourly rate: $"			+ wagePerHour + "\n" +
+							   		   "Hours worked: " 			+ hoursWorked + "\n" +
+							   		   "Gross pay: $"   			+ totalPay);
+			
+					sc.close();		// closing Scanner
+	}// end main method
+}// end class Payroll_V2
