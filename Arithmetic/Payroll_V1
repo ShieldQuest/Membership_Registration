@@ -1,7 +1,7 @@
 /*
- * 	Author:    Robert Alvarez
+ * 	Author:    COP2551C
  * 	Date:      12-9-25
- * 	Summary:	 this app asks the user to enter an hourly wage, 
+ * 	Summary:   this app asks the user to enter an hourly wage, 
  * 			 and total hours worked to determine the gross pay. 
  */
 
