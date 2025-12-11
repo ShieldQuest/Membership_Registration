@@ -1,0 +1,66 @@
+/*
+ * 	Author:  COP2551C
+ *  Date:	 9-9-25
+ *  	Summary: this program prompts the user to input two real numbers (N and D),
+ *  			     divide first by second (N / D), then displays the two numbers and 
+ *  			     their quotient (Q). 
+ *  			V2 - this version will prevent the division by zero by implementing
+ *  			     a selection.
+ *  			V3 - this version will allow one more attempt at entering a non-zero D.
+ */
+
+import java.util.Scanner; 			// to read input from keyboard
+import java.text.DecimalFormat;		// to format decimal output
+
+public class Division_V3
+{
+		public static void main(String[] args) 
+		{
+				// variables
+				double N = 0.0;
+				double D = 0.0;
+				double Q = 0.0;
+				
+				Scanner sc = new Scanner(System.in);					      // sc is the chosen Scanner name
+				DecimalFormat DF = new DecimalFormat("##.##");			// always forces 2 decimals
+
+				// ================= INPUT ================= 
+				System.out.println("Enter N: ");
+				N = sc.nextDouble();
+				System.out.println("Enter D: ");
+				D = sc.nextDouble();
+						
+				// ============ PROCESS + OUTPUT ============ 
+				if(D == 0)
+				{
+						System.out.println("Cannot divide by zero!");
+						System.out.println("Try again...Enter D: ");
+						D = sc.nextDouble();
+						if(D == 0)
+						{
+								System.out.println("Again...Cannot divide by zero!");
+						}// end if
+						else
+						{
+								// process: division
+								Q = N / D;
+								// output
+								System.out.println("The quotient of " + DF.format(N) + " and " + DF.format(D) + 
+												   " is " + DF.format(Q));
+						}// end else
+				}// end if 
+				else
+				{		
+						// process: division
+						Q = N / D;
+						// output
+						System.out.println("The quotient of " + DF.format(N) + " and " + DF.format(D) + 
+										   " is " + DF.format(Q));
+				}// end else
+				
+				// ================ GOODBYE! =================
+				System.out.println("Goodbye!");
+				sc.close();		                                  // closing Scanner to avoid memory leak
+						
+		}// end main method
+}// class Division_V3
