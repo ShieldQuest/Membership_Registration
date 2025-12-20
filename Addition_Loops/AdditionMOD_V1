@@ -1,0 +1,48 @@
+/*
+ * 
+ *	Author: COP2551C
+ *	Date:   9-16-25
+ *	Description: This program prompts the user to input two integers, 
+ *               add both, then displays the two integers and their sum. 
+ *               This program implements a new method (other than main())
+ *         		   to conduct the addition
+ */
+
+import java.util.Scanner;
+
+public class AdditionMOD_V1 
+{
+		public static void main(String[] args) 
+		{
+				// =============== VARIABLES ===============
+				int a = 0;
+				int b = 0;
+				int s = 0;
+				Scanner get = new Scanner(System.in); 
+					
+				// ================== INPUT ================== 
+				System.out.println("Enter a: ");
+				a = get.nextInt();									  	                //using 'get' to input an integer
+
+				System.out.println("Enter b: ");
+				b = get.nextInt();
+				
+				// ================= PROCESS ================= 
+				s = add(a, b);											                    // calls the add() method and store the returned value in s
+				
+				// ================= OUTPUT ================== 
+				System.out.println("The sum of " + a + " and " + b + " is " + s);
+				get.close();											                      //closing the scanner 
+
+		}// end main
+	
+		// ================= METHODS ================= 
+		// This method receives two integers, adds them, and returns the sum
+		public static int add(int a, int b) 
+		{
+				int s = 0;												                    //this a new LOCOL MEMORY called 's'
+				s = a + b;
+				return s;												                      //value in 's' is returned back to the caller in main
+		}// end add
+		
+}// end class AdditionMOD_V1
