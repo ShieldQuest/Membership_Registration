@@ -1,0 +1,74 @@
+/*
+ * 	Author:  COP2551C
+ *  Date:	   9-9-25
+ *  	Summary: this program prompts the user to input two real numbers (N and D),
+ *  			     divide first by second (N / D), then displays the two numbers and 
+ *  			     their quotient (Q). 
+ *  			V2 - this version will prevent the division by zero by implementing
+ *  			 	   a selection.
+ *  			V3 - this version will allow one more attempt at entering a non-zero D.
+ *  		  V4 - this version implements a loop to allow as many attempts until the
+ *  				   user enters non-zero D.
+ *  			V5 - in this version we will do away with selections and implement only
+ *  				   a while() loop. 
+ *  		  V6 - this version allows for a max of 3 attempts
+ *  		  V7 - This program allows the user to repeat the whole program for a new division.
+ */
+
+import java.util.Scanner; 						    					    // to read input from keyboard
+import java.text.DecimalFormat;											    // to format decimal output
+
+public class Division_V7
+{
+		public static void main(String[] args) 
+		{
+				// =============== VARIABLES ===============
+				double N = 0.0;
+				double D = 0.0;
+				double Q = 0.0;
+				
+				int attempts 	 = 0;
+				int answer		 = 1;									              // 1 makes the 'while' loop start
+				Scanner sc 		 = new Scanner(System.in);				  // sc is the chosen Scanner name
+				DecimalFormat DF = new DecimalFormat("##.##");		// always forces 2 decimals
+				
+				// ================= PROCESS ================= 
+				while(answer == 1)
+				{
+						// ================= INPUT ================= 
+						System.out.println("Enter N: ");
+						N = sc.nextDouble();
+						
+						System.out.println("Enter D: ");
+						D = sc.nextDouble();
+								
+						// ========== CALC PROCESS + OUTPUT ========= 
+						attempts = attempts + 1;							         // you can also use attempts++ or attempts+=1
+						while(D == 0.0 && attempts < 3)						     // as long as D=0 AND attempts are less than 3...repeat
+						{
+								System.out.println("Cannot divide by zero! Re-enter a non-zero D: ");
+								D 		 = sc.nextDouble();
+								attempts = attempts + 1;					         // you can also use attempts++ or attempts+=1
+						}// end while
+						
+						if(D == 0)
+						{
+								System.out.println("Max allowed attempts reached reach with D still open...");
+						}// end if
+						else
+						{
+								Q = N / D;	 									             // process: division
+								System.out.println("The quotient of " + DF.format(N) + " and " + DF.format(D) + 
+												   " is " + DF.format(Q));	     	 // output
+						}// end else
+						
+						System.out.println("Do you want to do another division? enter 1 for yes or 2 for no: ");
+						answer = sc.nextInt();
+				}// end while
+						
+				// ================ GOODBYE! =================
+				System.out.println("Goodbye!");
+				sc.close();														            // closing Scanner to avoid memory leak
+				
+		}// end main method
+}// class Division_V7
